@@ -1,27 +1,25 @@
 {
   "compilerOptions": {
-    // Enable latest features
-    "lib": ["ESNext", "DOM"],
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleDetection": "force",
-    "jsx": "react-jsx",
+    "jsx": "react",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "ES2021",
+    "declaration": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "allowJs": true,
+    "sourceMap": false,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "rootDir": "./src",
 
-    // Bundler mode
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
-
-    // Best practices
-    "strict": true,
+    "incremental": true,
     "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
-
-    // Some stricter flags (disabled by default)
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
-  }
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules","venv"],
+  "include": ["**/src/**/*", "tests"]
 }
