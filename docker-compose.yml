@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    container_name: sei-anm-app
+    ports:
+      - "${FORWARD_APP_PORT-3000}:3000"
+    environment:
+      - NODE_ENV=$NODE_ENV
+      - DB_HOST=$DATABASE_HOST
+      - DB_PORT=3306
+      - DB_USER=$DATABASE_USER
+      - DB_PASS=$DATABASE_PASSWORD
+      - DB_NAME=$DATABASE_NAME
+    depends_on:
+      - mariadb
+    volumes:
+      - .:/usr/src/app
+
+volumes:
+  default:
+    driver: local
+    name: "sei-anm-service"
